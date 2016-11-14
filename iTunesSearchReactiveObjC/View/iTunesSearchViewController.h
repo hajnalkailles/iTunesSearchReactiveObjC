@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchTermTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *limitTextfield;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (weak, nonatomic) IBOutlet UIView *activityIndicator;
 
 @end

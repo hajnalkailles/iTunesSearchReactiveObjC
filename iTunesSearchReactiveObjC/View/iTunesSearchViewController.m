@@ -30,6 +30,7 @@
     }];
     
     self.searchButton.rac_command = self.searchViewModel.executeSearch;
+    RAC(self.activityIndicator, hidden) = [self.searchViewModel.executeSearch.executing not];
 }
 
 - (UIColor *)backgroundColorForValidState:(BOOL)valid {
