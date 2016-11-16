@@ -11,9 +11,9 @@
 @interface iTunesJsonData : NSObject
 
 @property(copy, nonatomic) NSString *artistName;
-@property(copy, nonatomic) NSString *mediaType;
 @property(copy, nonatomic) NSString *trackName;
+@property(copy, nonatomic) NSString *genreName;
 
-- (id)initWithArtistName:(NSString *)artistName mediaType:(NSString *)mediaType trackName:(NSString *)trackName;
+- (id)initWithArtistName:(NSString *)artistName trackName:(NSString *)trackName genreName:(NSString *)genreName;
 
 @end

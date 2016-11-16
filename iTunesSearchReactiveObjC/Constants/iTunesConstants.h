@@ -23,7 +23,7 @@ static NSString * const iTunesSearchUrlFormat = @"https://itunes.apple.com/searc
 
 static NSString * const jsonTagResults = @"results";
 static NSString * const jsonTagArtistName = @"artistName";
-static NSString * const jsonTagKind = @"kind";
 static NSString * const jsonTagTrackName = @"trackName";
+static NSString * const jsonTagGenreName = @"primaryGenreName";
 
 #endif /* iTunesConstants_h */

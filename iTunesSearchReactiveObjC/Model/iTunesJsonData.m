@@ -14,17 +14,17 @@
 - (id)init {
     if ( self = [super init] ) {
         self.artistName = @"";
-        self.mediaType = @"";
         self.trackName = @"";
+        self.genreName = @"";
     }
     return self;
 }
 
-- (id)initWithArtistName:(NSString *)artistName mediaType:(NSString *)mediaType trackName:(NSString *)trackName {
+- (id)initWithArtistName:(NSString *)artistName trackName:(NSString *)trackName genreName:(NSString *)genreName {
     if ( self = [super init] ) {
         self.artistName = artistName;
-        self.mediaType = mediaType;
         self.trackName = trackName;
+        self.genreName = genreName;
     }
     return self;
 }

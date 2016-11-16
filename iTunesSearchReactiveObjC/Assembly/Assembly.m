@@ -20,7 +20,7 @@
             [initializer injectParameterWith:resultTableViewIdentifier];
         }];
         
-        [definition injectProperty:@selector(resultViewModel) with:[self extendedResultViewModel]];
+        [definition injectProperty:@selector(resultViewModel) with:[self resultViewModel]];
     }];
 }
 

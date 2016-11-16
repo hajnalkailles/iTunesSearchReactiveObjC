@@ -10,4 +10,28 @@
 
 @implementation iTunesSearchResultViewModel
 
+- (void) filterResults:(NSString *)searchText {
+    NSMutableSet *filteredResults = [[NSMutableSet alloc] init];
+    
+    for (iTunesJsonData *object in self.resultModel.jsonDataObject) {
+        if ([[object.trackName lowercaseString] containsString:[searchText lowercaseString]]) {
+            [filteredResults addObject:object];
+        }
+    }
+    
+    if ((filteredResults.count < self.resultModel.jsonDataObject.count) && (![self.filterKeyword isEqualToString:@""])) {
+        self.listToShow =  [NSMutableArray arrayWithArray:[filteredResults allObjects]];
+    } else {
+        self.listToShow = [NSMutableArray arrayWithArray:[self.resultModel.jsonDataObject allObjects]];
+    }
+}
+
+- (NSString *)cellTitleWithIndex:(NSInteger)index {
+    return [[self.listToShow objectAtIndex:index] trackName];
+}
+
+- (NSString *)cellSubtitleWithIndex:(NSInteger)index {
+    return [[self.listToShow objectAtIndex:index] artistName];
+}
+
 @end

@@ -20,6 +20,7 @@
 @property (copy, nonatomic) NSString *filterKeyword;
 
 - (id)initWithResultModel:(iTunesResult *)resultModel;
+- (void)filterResults:(NSString *)searchText;
 - (NSString *)cellTitleWithIndex:(NSInteger)index;
 - (NSString *)cellSubtitleWithIndex:(NSInteger)index;
 

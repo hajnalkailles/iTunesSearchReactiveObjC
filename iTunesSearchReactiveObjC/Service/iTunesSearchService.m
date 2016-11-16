@@ -40,10 +40,10 @@
         
         for (NSDictionary *resultDictionary in resultArray) {
             NSString *artistName = [resultDictionary objectForKey:jsonTagArtistName];
-            NSString *mediaType = [resultDictionary objectForKey:jsonTagKind];
             NSString *trackName = [resultDictionary objectForKey:jsonTagTrackName];
+            NSString *genreName = [resultDictionary objectForKey:jsonTagGenreName];
             
-            appendingItem = [[iTunesJsonData alloc] initWithArtistName:artistName mediaType:mediaType trackName:trackName];
+            appendingItem = [[iTunesJsonData alloc] initWithArtistName:artistName trackName:trackName genreName:genreName];
             [resultList addObject:appendingItem];
         }
         

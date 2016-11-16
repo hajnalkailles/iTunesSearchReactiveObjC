@@ -10,11 +10,12 @@
 
 @implementation iTunesExtendedResultViewModel
 
-- (void) filterResults:(NSString *)searchText {
+- (void)filterResults:(NSString *)searchText {
     NSMutableSet *filteredResults = [[NSMutableSet alloc] init];
     
     for (iTunesJsonData *object in self.resultModel.jsonDataObject) {
-        if ([[object.trackName lowercaseString] containsString:[searchText lowercaseString]]) {
+        NSString *titleString = [NSString stringWithFormat:@"%@ - %@", object.artistName, object.trackName];
+        if ([[titleString lowercaseString] containsString:[searchText lowercaseString]]) {
             [filteredResults addObject:object];
         }
     }
@@ -27,11 +28,13 @@
 }
 
 - (NSString *)cellTitleWithIndex:(NSInteger)index {
-    return [[self.listToShow objectAtIndex:index] trackName];
+    NSString *artistName = [[self.listToShow objectAtIndex:index] artistName];
+    NSString *trackName = [[self.listToShow objectAtIndex:index] trackName];
+    return [NSString stringWithFormat:@"%@ - %@", artistName, trackName];
 }
 
 - (NSString *)cellSubtitleWithIndex:(NSInteger)index {
-    return [[self.listToShow objectAtIndex:index] artistName];
+    return [[self.listToShow objectAtIndex:index] genreName];
 }
 
 @end

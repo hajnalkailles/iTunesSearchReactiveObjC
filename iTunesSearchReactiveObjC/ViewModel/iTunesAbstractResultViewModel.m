@@ -30,28 +30,16 @@
     return self;
 }
 
-- (void) filterResults:(NSString *)searchText {
-    NSMutableSet *filteredResults = [[NSMutableSet alloc] init];
-    
-    for (iTunesJsonData *object in self.resultModel.jsonDataObject) {
-        if ([[object.trackName lowercaseString] containsString:[searchText lowercaseString]]) {
-            [filteredResults addObject:object];
-        }
-    }
-    
-    if ((filteredResults.count < self.resultModel.jsonDataObject.count) && (![self.filterKeyword isEqualToString:@""])) {
-        self.listToShow =  [NSMutableArray arrayWithArray:[filteredResults allObjects]];
-    } else {
-        self.listToShow = [NSMutableArray arrayWithArray:[self.resultModel.jsonDataObject allObjects]];
-    }
+- (void)filterResults:(NSString *)searchText {
+    self.listToShow = [self.listToShow initWithArray:[NSArray array]];
 }
 
 - (NSString *)cellTitleWithIndex:(NSInteger)index {
-    return [[self.listToShow objectAtIndex:index] trackName];
+    return @"Title";
 }
 
 - (NSString *)cellSubtitleWithIndex:(NSInteger)index {
-    return [[self.listToShow objectAtIndex:index] mediaType];
+    return @"Subtitle";
 }
 
 @end
