@@ -32,10 +32,10 @@
     return self;
 }
 
-- (void)pushViewWithViewModel:(NSString *)view andViewModel:(iTunesSearchResultViewModel *)viewModel {
+- (void)pushViewWithModel:(iTunesResult *)model {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:mainStoryboardName bundle:nil];
-    iTunesSearchResultTableViewController *nextViewController = (iTunesSearchResultTableViewController *)[storyBoard instantiateViewControllerWithIdentifier:view];
-    nextViewController.resultViewModel = viewModel;
+    iTunesSearchResultTableViewController *nextViewController = (iTunesSearchResultTableViewController *)[storyBoard instantiateViewControllerWithIdentifier:resultTableViewIdentifier];
+    nextViewController.resultViewModel.resultModel = model;
     [self.navigationController pushViewController:nextViewController animated:YES];
 }
 

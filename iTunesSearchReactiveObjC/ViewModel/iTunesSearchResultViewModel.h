@@ -6,18 +6,10 @@
 //  Copyright © 2016. Hajnalka Hegyi. All rights reserved.
 //
 
-#import "iTunesResult.h"
+#import "iTunesAbstractResultViewModel.h"
 
-#import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface iTunesSearchResultViewModel : NSObject
-
-@property (strong, nonatomic) iTunesResult *resultModel;
-@property (strong, nonatomic) NSMutableArray *listToShow;
-@property (strong, nonatomic) RACTuple *filterTuple;
-@property (strong, nonatomic) RACSignal *filterSignal;
-
-- (id)initWithResultModel:(iTunesResult *)resultModel;
+@interface iTunesSearchResultViewModel : iTunesAbstractResultViewModel
 
 @end

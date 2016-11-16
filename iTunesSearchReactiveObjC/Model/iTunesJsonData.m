@@ -15,14 +15,16 @@
     if ( self = [super init] ) {
         self.artistName = @"";
         self.mediaType = @"";
+        self.trackName = @"";
     }
     return self;
 }
 
-- (id)initWithArtistName:(NSString *)artistName andMediaType:(NSString *)mediaType {
+- (id)initWithArtistName:(NSString *)artistName mediaType:(NSString *)mediaType trackName:(NSString *)trackName {
     if ( self = [super init] ) {
         self.artistName = artistName;
         self.mediaType = mediaType;
+        self.trackName = trackName;
     }
     return self;
 }

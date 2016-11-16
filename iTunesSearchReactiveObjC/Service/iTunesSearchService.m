@@ -41,8 +41,9 @@
         for (NSDictionary *resultDictionary in resultArray) {
             NSString *artistName = [resultDictionary objectForKey:jsonTagArtistName];
             NSString *mediaType = [resultDictionary objectForKey:jsonTagKind];
+            NSString *trackName = [resultDictionary objectForKey:jsonTagTrackName];
             
-            appendingItem = [[iTunesJsonData alloc] initWithArtistName:artistName andMediaType:mediaType];
+            appendingItem = [[iTunesJsonData alloc] initWithArtistName:artistName mediaType:mediaType trackName:trackName];
             [resultList addObject:appendingItem];
         }
         

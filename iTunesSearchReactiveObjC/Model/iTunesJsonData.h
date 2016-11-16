@@ -12,7 +12,8 @@
 
 @property(copy, nonatomic) NSString *artistName;
 @property(copy, nonatomic) NSString *mediaType;
+@property(copy, nonatomic) NSString *trackName;
 
-- (id)initWithArtistName:(NSString *)artistName andMediaType:(NSString *)mediaType;
+- (id)initWithArtistName:(NSString *)artistName mediaType:(NSString *)mediaType trackName:(NSString *)trackName;
 
 @end

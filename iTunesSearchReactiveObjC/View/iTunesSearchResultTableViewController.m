@@ -38,9 +38,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:searchResultCellIdentifier forIndexPath:indexPath];
     
-    iTunesJsonData *jsonDataObject = self.resultViewModel.listToShow[indexPath.row];
-    cell.textLabel.text = jsonDataObject.artistName;
-    cell.detailTextLabel.text = jsonDataObject.mediaType;
+    cell.textLabel.text = [self.resultViewModel cellTitleWithIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.resultViewModel cellSubtitleWithIndex:indexPath.row];
     cell.detailTextLabel.textColor = [UIColor grayColor];
     
     return cell;

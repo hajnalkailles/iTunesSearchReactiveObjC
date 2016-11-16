@@ -14,6 +14,6 @@
 @interface NavigationService : NSObject
 
 - (id)initWithNavigationController:(UINavigationController *)navigationController;
-- (void)pushViewWithViewModel:(NSString *)view andViewModel:(iTunesSearchResultViewModel *)viewModel;
+- (void)pushViewWithModel:(iTunesResult *)model;
 
 @end

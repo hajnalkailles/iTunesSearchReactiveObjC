@@ -63,8 +63,7 @@
 
 - (RACSignal *)searchMediaInfo {
     return [[self.searchService iTunesSearchSignalForSearchTerm:self.searchTerm andLimit:@(self.limit)] doNext:^(iTunesResult *results) {
-        iTunesSearchResultViewModel *viewModel = [[iTunesSearchResultViewModel alloc] initWithResultModel:results];
-        [self.navigationService pushViewWithViewModel:@"iTunesSearchResultTableViewController" andViewModel:viewModel];
+        [self.navigationService pushViewWithModel:results];
     }];
 }
 

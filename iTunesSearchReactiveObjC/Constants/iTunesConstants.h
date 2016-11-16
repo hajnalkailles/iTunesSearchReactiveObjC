@@ -15,6 +15,7 @@
 
 static NSString * const mainStoryboardName = @"Main";
 static NSString * const searchResultCellIdentifier = @"resultCell";
+static NSString * const resultTableViewIdentifier = @"iTunesSearchResultTableViewController";
 
 #pragma mark: iTunes Search API constants
 
@@ -23,5 +24,6 @@ static NSString * const iTunesSearchUrlFormat = @"https://itunes.apple.com/searc
 static NSString * const jsonTagResults = @"results";
 static NSString * const jsonTagArtistName = @"artistName";
 static NSString * const jsonTagKind = @"kind";
+static NSString * const jsonTagTrackName = @"trackName";
 
 #endif /* iTunesConstants_h */
